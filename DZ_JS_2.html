@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lan="en">
+  <head>
+      <meta charset="utf-8" />
+      <title>JS_DZ_2</title>
+  </head>
+  <body>
+      <input type="button" value="Нажмите и ответьте на вопросы">
+      <script>
+          onclick = function () {
+              var age = Number(prompt('Введите Ваш возраст'));
+              if (age >= 0 && age< 12) {
+                  alert('Вы являетесь ребенком');
+              } 
+              else if (age >= 12 && age< 18) {
+                  alert('Вы являетесь подростком');
+              }
+              else if (age >= 18 && age< 60) {
+                  alert('Вы являетесь взрослым');
+              }
+              else if (age >= 60) {
+                  alert('Вы являетесь пенсионером');
+              };
+              var nbr = prompt('Введите число от 0 до 9');
+              switch (nbr) {
+                  case '0':
+                      alert('Число '+nbr+' - спецсимвол на клавиатуре - )');
+                      break;
+                  case '1':
+                      alert('Число '+nbr+' - спецсимвол на клавиатуре - !');
+                      break;
+                  case '2':
+                      alert('Число '+nbr+' - спецсимвол на клавиатуре - @');
+                      break;
+                  case '3':
+                      alert('Число '+nbr+' - спецсимвол на клавиатуре - #');
+                      break;
+                  case '4':
+                      alert('Число '+nbr+' - спецсимвол на клавиатуре - $');
+                      break;
+                  case '5':
+                      alert('Число '+nbr+' - спецсимвол на клавиатуре - %');
+                      break;
+                  case '6':
+                      alert('Число '+nbr+' - спецсимвол на клавиатуре - ^');
+                      break;
+                  case '7':
+                      alert('Число '+nbr+' - спецсимвол на клавиатуре - &');
+                      break;
+                  case '8':
+                      alert('Число '+nbr+' - спецсимвол на клавиатуре - *');break;
+                  case '9':
+                      alert('Число '+nbr+' - спецсимвол на клавиатуре - (');
+                      break;
+              };
+              var nmbr = prompt('Введите трехзначное число');
+              ((nmbr[0] === nmbr[1]) || (nmbr[1] === nmbr[2]) || (nmbr[0] === nmbr[2])) ? alert('В Вашем числе '+nmbr+' есть одинаковые цифры'): alert('В Вашем числе '+nmbr+' нет одинаковых цифр');
+              var year = Number(prompt('Введите любой год'));
+              (year%400 === 0 || (year%4 === 0 && year%100 !== 0)) ? alert(year+' является високосным годом') : alert(year+' не является високосным годом');
+              var nmbr_5 = prompt('Введите пятиразрядное число число');
+              ((nmbr_5[0] === nmbr_5[4]) && (nmbr_5[1] === nmbr_5[3])) ? alert('В Вашем числе '+nmbr_5+' является полиндромом') : alert('В Вашем числе '+nmbr_5+' не является полиндромом');
+              var sum_USD = Number(prompt('Введите количество USD'));
+              var currency = Number(prompt('Выберите в какую валюту хотите перевести: 1 - EUR, 2 -UAN, 3 - AZN'));
+              if (currency===1) {
+                  alert(sum_USD+' USD ='+sum_USD*0.917+' EUR')
+              }
+              else if (currency===2) {
+                      alert(sum_USD+' USD ='+sum_USD*38.27+' UAN')
+                  }
+                            else if (currency===3) {
+                          alert(sum_USD+' USD ='+sum_USD*1.7+' AZN')
+                                };
+              var sum = Number(prompt('Введите сумму покупки'));
+              if (sum<200) {
+                  alert('К оплате ' +sum);
+              }
+              else if (sum>=200 && sum<300) {
+                  alert('К оплате ' +(sum*0.97)+ ' с учетом скидки 3%');
+              }
+              else if (sum>=300 && sum<500) {
+                  alert('К оплате ' +(sum*0.95)+ ' с учетом скидки 5%');
+              }
+              else if (sum>=500) {
+                  alert('К оплате ' +(sum*0.93)+ ' с учетом скидки 7%')
+              };
+              var perimeter = Number(prompt('Введите периметр квадрата'));
+              var circle_circumference = Number(prompt('Введите длину окружности'));
+              ((perimeter/4)>=(circle_circumference/Math.PI)) ? alert('Окружность длиной '+circle_circumference+' может поместиться в квадрат периметром '+perimeter) : alert('Окружность длиной '+circle_circumference+' не может поместиться в квадрат периметром '+perimeter);              
+              var question_1 = Number(prompt('Выберите правильный ответ - Столица России? 1 - Приж, 2 - Минск, 3 - Москва'));
+              var question_2 = Number(prompt('Выберите правильный ответ - В какой стране находится Милан? 1 - Италия, 2 - Франция, 3 - Испания'));
+              var question_3 = Number(prompt('Выберите правильный ответ - Валюта Японии? 1 - Доллар, 2 - Юань, 3 - Йена'));
+              var scores = 0;
+              if (question_1 === 3) {scores += 2};
+              if (question_2 === 1) {scores += 2};
+              if (question_3 === 3) {scores += 2};
+              alert('Вы набрали ' + scores + ' баллов');            
+              var data = prompt('Введите дату (dd/mm/yyyy)');
+              data = data.split('/');
+              var next_data = new Date(data[2], data[1]-1, data[0]);
+              next_data.setDate(next_data.getDate()+1);
+              alert('Следующий день '+next_data);           
+          }              
+      </script>
+  </body>
+</html>
